@@ -28,13 +28,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         holder.titulo.setText("JESUS CRISTO É O SENHOR");
         holder.ano.setText("SEMPRE");
-        holder.genero.setText("CELESTIAL DOS CELESTIAI");
+        holder.genero.setText("CELESTIAL DOS CELESTIAIS");
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 5;
     }
 
     //criando uma classe para guarda os dados vh

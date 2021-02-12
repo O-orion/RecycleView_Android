@@ -7,9 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.jesuscristo.recycleview_part1.R;
+import com.jesuscristo.recycleview_part1.adapter.Adapter;
+import com.jesuscristo.recycleview_part1.model.Filme;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recy;
+    private List<Filme> listaFilmes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +25,11 @@ public class MainActivity extends AppCompatActivity {
         recy =      findViewById(R.id.recyclerView);
 
         //configurando o adapter
+        Adapter adptador = new Adapter();
+
+        //criando a lista de filmes
 
         //configurando managerLayout
-
         RecyclerView.LayoutManager layout = new LinearLayoutManager( getApplicationContext() );
         recy.setLayoutManager( layout );
 
@@ -29,6 +37,37 @@ public class MainActivity extends AppCompatActivity {
         recy.setHasFixedSize( true );
 
         //Definindo o adapter
-        //recy.setAdapter();
+        recy.setAdapter( adptador );
     }
+
+    public void criarFilmes(){
+        Filme filme = new Filme("Moise Principe do Egito","1997","Real");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Corajoso","2017","Ação/Espiritual");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Liga da Justiça","2017","Ação/Ficção");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Homem Aranha de Voltar ao Lar","201","Ficção");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Homem Aranha de Voltar ao Lar","201","Ficção");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Homem Aranha de Voltar ao Lar","201","Ficção");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Homem Aranha de Voltar ao Lar","201","Ficção");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Homem Aranha de Voltar ao Lar","201","Ficção");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Homem Aranha de Voltar ao Lar","201","Ficção");
+        listaFilmes.add(filme);
+
+    }
+
 }
