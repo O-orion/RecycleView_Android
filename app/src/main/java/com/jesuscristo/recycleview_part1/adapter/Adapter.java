@@ -6,11 +6,20 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jesuscristo.recycleview_part1.R;
+import com.jesuscristo.recycleview_part1.model.Filme;
+
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
+    private List<Filme> listaFilmes;
+
+    public Adapter(List<Filme> lista) {
+        this.listaFilmes = lista;
+    }
+
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -26,15 +35,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        holder.titulo.setText("JESUS CRISTO É O SENHOR");
-        holder.ano.setText("SEMPRE");
-        holder.genero.setText("CELESTIAL DOS CELESTIAIS");
+        Filme filme = listaFilmes.get( position );
+        holder.titulo.setText( filme.getTituloFilme() );
+        holder.ano.setText( filme.getAno() );
+        holder.genero.setText( filme.getGenero() );
 
     }
 
     @Override
     public int getItemCount() {
-        return 5;
+        return listaFilmes.size();
     }
 
     //criando uma classe para guarda os dados vh

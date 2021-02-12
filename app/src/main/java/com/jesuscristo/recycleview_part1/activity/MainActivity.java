@@ -24,10 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
         recy =      findViewById(R.id.recyclerView);
 
-        //configurando o adapter
-        Adapter adptador = new Adapter();
-
         //criando a lista de filmes
+        this.criarFilmes();
+
+        //configurando o adapter
+        Adapter adptador = new Adapter( listaFilmes );
 
         //configurando managerLayout
         RecyclerView.LayoutManager layout = new LinearLayoutManager( getApplicationContext() );
@@ -41,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void criarFilmes(){
-        Filme filme = new Filme("Moise Principe do Egito","1997","Real");
+
+
+        Filme filme = new Filme("JESUS CRISTO É O SENHOR!!","PARA TODO SEMPRE",
+                "CELESTIAL DOS CELESTIAIS");
         listaFilmes.add(filme);
 
         filme = new Filme("Corajoso","2017","Ação/Espiritual");
@@ -66,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         listaFilmes.add(filme);
 
         filme = new Filme("Homem Aranha de Voltar ao Lar","201","Ficção");
+        listaFilmes.add(filme);
+
+        filme = new Filme("Moise principe do Egito","1997","real");
         listaFilmes.add(filme);
 
     }
