@@ -1,10 +1,12 @@
 package com.jesuscristo.recycleview_part1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 import com.jesuscristo.recycleview_part1.R;
 import com.jesuscristo.recycleview_part1.adapter.Adapter;
@@ -33,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         //configurando managerLayout
         RecyclerView.LayoutManager layout = new LinearLayoutManager( getApplicationContext() );
         recy.setLayoutManager( layout );
+
+        //adicionando linha
+        recy.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
 
         //melhorando a performave definindo um tamanho fixo
         recy.setHasFixedSize( true );
