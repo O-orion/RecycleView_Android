@@ -6,11 +6,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.jesuscristo.recycleview_part1.R;
 import com.jesuscristo.recycleview_part1.adapter.Adapter;
-import com.jesuscristo.recycleview_part1.model.Filme;
+import com.jesuscristo.recycleview_part1.activity.model.Filme;
+import com.jesuscristo.recycleview_part1.activity.model.RecyclerItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +48,40 @@ public class MainActivity extends AppCompatActivity {
 
         //Definindo o adapter
         recy.setAdapter( adptador );
+
+        // adicionando evento de click
+        recy.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        getApplicationContext(),
+                        recy,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                Toast.makeText(
+                                        getApplicationContext(),
+                                        "Jesus é bom",
+                                        Toast.LENGTH_LONG
+                                ).show();
+
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+                                Toast.makeText(
+                                        getApplicationContext(),
+                                        "JESUS E MUITO BOM",
+                                        Toast.LENGTH_SHORT
+                                ).show();
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                            }
+                        }
+                )
+        );
+
     }
 
     public void criarFilmes(){

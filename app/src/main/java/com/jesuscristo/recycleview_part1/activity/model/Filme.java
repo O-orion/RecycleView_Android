@@ -1,4 +1,4 @@
-package com.jesuscristo.recycleview_part1.model;
+package com.jesuscristo.recycleview_part1.activity.model;
 
 public class Filme {
     private String tituloFilme;

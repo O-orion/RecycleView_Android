@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.jesuscristo.recycleview_part1.R;
-import com.jesuscristo.recycleview_part1.model.Filme;
+import com.jesuscristo.recycleview_part1.activity.model.Filme;
 
 import java.util.List;
 
