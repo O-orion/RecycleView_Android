@@ -55,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
                         getApplicationContext(),
                         recy,
                         new RecyclerItemClickListener.OnItemClickListener() {
+
                             @Override
                             public void onItemClick(View view, int position) {
+                                Filme filme = listaFilmes.get( position );
                                 Toast.makeText(
                                         getApplicationContext(),
-                                        "Jesus é bom",
+                                        "Jesus é bom: " + filme.getTituloFilme(),
                                         Toast.LENGTH_LONG
                                 ).show();
 
@@ -67,9 +69,10 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void onLongItemClick(View view, int position) {
+                                Filme filme = listaFilmes.get( position );
                                 Toast.makeText(
                                         getApplicationContext(),
-                                        "JESUS E MUITO BOM",
+                                        "JESUS E MUITO BOM: Item clicado " + filme.getTituloFilme(),
                                         Toast.LENGTH_SHORT
                                 ).show();
                             }
